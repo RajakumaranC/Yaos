@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -21,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Yaos.Api.Orders\Yaos.Api.Orders.csproj" />
+    <ProjectReference Include="..\..\src\Yaos.Api.Customers\Yaos.Api.Customers.csproj" />
   </ItemGroup>
 
 </Project>
