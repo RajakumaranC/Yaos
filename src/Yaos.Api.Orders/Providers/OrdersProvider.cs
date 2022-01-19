@@ -5,13 +5,13 @@ using Yaos.Api.Orders.Interfaces;
 
 namespace Yaos.Api.Orders.Providers
 {
-    public class OdersProviders : IOrdersProvider
+    public class OrdersProvider : IOrdersProvider
     {
         private readonly ILogger<IOrdersProvider> logger;
         private readonly IMapper mapper;
         private readonly OrdersDbContext dbContext;
 
-        public OdersProviders(ILogger<IOrdersProvider> logger, IMapper mapper, OrdersDbContext dbContext)
+        public OrdersProvider(ILogger<IOrdersProvider> logger, IMapper mapper, OrdersDbContext dbContext)
         {
             this.logger = logger;
             this.mapper = mapper;

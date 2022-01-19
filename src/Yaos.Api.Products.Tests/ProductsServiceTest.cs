@@ -12,21 +12,29 @@ namespace Yaos.Api.Products.Tests
 {
     public class ProductsServiceTest
     {
+        private ProductsDbContext dbContext;
+        private Mapper mapper;
+        private ProductsProvider productsProvider;
+
+        public ProductsServiceTest()
+        {
+            var options = new DbContextOptionsBuilder<ProductsDbContext>().UseInMemoryDatabase(nameof(ProductsServiceTest))
+                .Options;
+            dbContext = new ProductsDbContext(options);
+
+            var productprofile = new ProductProfile();
+
+            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(productprofile));
+            mapper = new Mapper(configuration);
+
+            //CreateProducts(dbContext);
+
+            productsProvider = new ProductsProvider(dbContext, null, mapper);
+        }
+
         [Fact]
         public async Task GetProductsReturnsAllProductsAsync()
         {
-            var options = new DbContextOptionsBuilder<ProductsDbContext>().UseInMemoryDatabase(nameof(GetProductsReturnsAllProductsAsync))
-                .Options;
-            var dbContext = new ProductsDbContext(options);
-
-            CreateProducts(dbContext);
-
-            var productprofile = new ProductProfile();
-            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(productprofile));
-            var mapper = new Mapper(configuration);
-
-            var productsProvider = new ProductsProvider(dbContext, null, mapper);
-
             var product = await productsProvider.GetProductsAsync();
 
             Assert.True(product.IsSuccess);
@@ -38,18 +46,6 @@ namespace Yaos.Api.Products.Tests
         [Fact]
         public async Task GetProductReturnsProductUsingValidId()
         {
-            var options = new DbContextOptionsBuilder<ProductsDbContext>().UseInMemoryDatabase(nameof(GetProductReturnsProductUsingValidId))
-                .Options;
-            var dbContext = new ProductsDbContext(options);
-
-            CreateProducts(dbContext);
-
-            var productprofile = new ProductProfile();
-            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(productprofile));
-            var mapper = new Mapper(configuration);
-
-            var productsProvider = new ProductsProvider(dbContext, null, mapper);
-
             var product = await productsProvider.GetProductAsync(1);
 
             Assert.True(product.IsSuccess);
@@ -61,18 +57,6 @@ namespace Yaos.Api.Products.Tests
         [Fact]
         public async Task GetProductReturnsProductUsingInvalidId()
         {
-            var options = new DbContextOptionsBuilder<ProductsDbContext>().UseInMemoryDatabase(nameof(GetProductReturnsProductUsingInvalidId))
-                .Options;
-            var dbContext = new ProductsDbContext(options);
-
-            CreateProducts(dbContext);
-
-            var productprofile = new ProductProfile();
-            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(productprofile));
-            var mapper = new Mapper(configuration);
-
-            var productsProvider = new ProductsProvider(dbContext, null, mapper);
-
             var product = await productsProvider.GetProductAsync(-1);
 
             Assert.False(product.IsSuccess);
