@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  yaos.api.customers:
+    image: ${DOCKER_REGISTRY-}yaosapicustomers
+    build:
+      context: .
+      dockerfile: Yaos.Api.Customers\Dockerfile
+
+  yaos.api.orders:
+    image: ${DOCKER_REGISTRY-}yaosapiorders
+    build:
+      context: .
+      dockerfile: Yaos.Api.Orders\Dockerfile
+
+
+  yaos.api.products:
+    image: ${DOCKER_REGISTRY-}yaosapiproducts
+    build:
+      context: .
+      dockerfile: Yaos.Api.Products\Dockerfile
+
+
+  yaos.api.search:
+    image: ${DOCKER_REGISTRY-}yaosapisearch
+    build:
+      context: .
+      dockerfile: Yaos.Api.Search\Dockerfile
+
