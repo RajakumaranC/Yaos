@@ -1,3 +1,5 @@
+![Azure DevOps builds (main)](https://dev.azure.com/rajakuc97/ec53a9ec-7a6d-4d21-9bf8-a7f66e13998c/_apis/build/status/6)
+
 # YAOS
 Yet Another Online Store or YAOS is a simple Ecommerce application demonstrating on how to build and implement .NET Core based Microservice Application with various industry wide used architecture patterns, libraries and best practices.
 
