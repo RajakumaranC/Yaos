@@ -5,21 +5,27 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "6002"
+      - "6002:80"
+
   yaos.api.orders:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "6003"
-
+      - "6003:80"
+    
   yaos.api.products:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "6001"
+      - "6001:80"
+
 
   yaos.api.search:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - Services__Products=http://yaos.api.products
+      - Services__Customers=http://yaos.api.customers
+      - Services__Orders=http://yaos.api.orders
     ports:
-      - "6004"
+      - "6004:80"
+
