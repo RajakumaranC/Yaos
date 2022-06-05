@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yaos.Api.Products.Tests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yaos.Api.Search.Tests", "..\tests\Yaos.Api.Search.Tests\Yaos.Api.Search.Tests.csproj", "{3D3E7973-8C5C-40CF-BDAA-16709775BB29}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Yaos.Sql.Database", "Yaos.Sql.Database\Yaos.Sql.Database.sqlproj", "{5E03FD81-59B7-4CF4-A931-668315668BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,12 @@ Global
 		{3D3E7973-8C5C-40CF-BDAA-16709775BB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3E7973-8C5C-40CF-BDAA-16709775BB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3E7973-8C5C-40CF-BDAA-16709775BB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E03FD81-59B7-4CF4-A931-668315668BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E03FD81-59B7-4CF4-A931-668315668BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E03FD81-59B7-4CF4-A931-668315668BAE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5E03FD81-59B7-4CF4-A931-668315668BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E03FD81-59B7-4CF4-A931-668315668BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E03FD81-59B7-4CF4-A931-668315668BAE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
