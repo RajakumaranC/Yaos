@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  customers:
+    image: Yaoscr/yaosapicustomers:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80/http"
+
+  orders:
+    image: Yaoscr/yaosapiorders:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80/http"
+    
+  products:
+    image: Yaoscr/yaosapiproducts:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80/http"
+
+
+  search:
+    image: Yaoscr/yaosapisearch:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Services__Products=http://10.0.0.1:19081/yaos/products/
+      - Services__Customers=http://10.0.0.1:19081/yaos/customers/
+      - Services__Orders=http://10.0.0.1:19081/yaos/orders/
+    ports:
+      - "6004:80"
+

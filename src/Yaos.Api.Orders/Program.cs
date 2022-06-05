@@ -16,7 +16,7 @@ builder.Services.AddDbContext<OrdersDbContext>(options =>
     options.UseInMemoryDatabase("Orders");
 });
 
-builder.Services.AddScoped<IOrdersProvider, OdersProviders>();
+builder.Services.AddScoped<IOrdersProvider, OrdersProvider>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
