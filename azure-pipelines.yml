@@ -11,6 +11,7 @@ pool:
 
 variables:
   solution: '**/*.sln'
+  sqlproject: "**/*.sqlproj"
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -19,15 +20,22 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
+    restoreSolution: '$(sqlproject)'
 
 - task: VSBuild@1
   inputs:
-    solution: '$(solution)'
+    solution: '$(sqlproject)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: CopyFiles@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**/*.dacproc'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: DACPROC
+
