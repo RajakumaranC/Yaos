@@ -23,6 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yaos.Api.Search.Tests", "..
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Yaos.Sql.Database", "Yaos.Sql.Database\Yaos.Sql.Database.sqlproj", "{5E03FD81-59B7-4CF4-A931-668315668BAE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments", "{CFB534D0-4804-4F62-A6DF-8CF66AF143EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{F83D7A77-A0F7-4789-B5B4-114AA3F803BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E4162B1E-D808-4353-9B02-FAFFC0F24C4F}"
+	ProjectSection(SolutionItems) = preProject
+		Products.Api.LoadTest.js = Products.Api.LoadTest.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +83,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05686240-C20A-45C7-9686-1F4231683B29} = {F83D7A77-A0F7-4789-B5B4-114AA3F803BB}
+		{F83D7A77-A0F7-4789-B5B4-114AA3F803BB} = {CFB534D0-4804-4F62-A6DF-8CF66AF143EF}
+		{E4162B1E-D808-4353-9B02-FAFFC0F24C4F} = {CFB534D0-4804-4F62-A6DF-8CF66AF143EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B3039FE-9BA4-4E73-B4EB-D8A2C642CAB9}
